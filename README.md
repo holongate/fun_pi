@@ -51,19 +51,19 @@ Ce module attends en argument la largeur de l'image (carrée), le nonmbre de poi
 
 ```
 python approximate_pi.py 800 1000000 5
-Image 0 with   100,000 points: pi = 3.14140 saved in img0_3-14140.ppm
-Image 1 with   200,000 points: pi = 3.13696 saved in img1_3-13696.ppm
-Image 2 with   300,000 points: pi = 3.14003 saved in img2_3-14003.ppm
-Image 3 with   400,000 points: pi = 3.13810 saved in img3_3-13810.ppm
-Image 4 with   500,000 points: pi = 3.13922 saved in img4_3-13922.ppm
-Image 5 with   600,000 points: pi = 3.13859 saved in img5_3-13859.ppm
-Image 6 with   700,000 points: pi = 3.13897 saved in img6_3-13897.ppm
-Image 7 with   800,000 points: pi = 3.13945 saved in img7_3-13945.ppm
-Image 8 with   900,000 points: pi = 3.13990 saved in img8_3-13990.ppm
-Image 9 with 1,000,000 points: pi = 3.14083 saved in img9_3-14083.ppm
+Image 0 with   100,000 points: pi = 3.15460 saved in img0_3-15460.ppm
+Image 1 with   200,000 points: pi = 3.14958 saved in img1_3-14958.ppm
+Image 2 with   300,000 points: pi = 3.14428 saved in img2_3-14428.ppm
+Image 3 with   400,000 points: pi = 3.14364 saved in img3_3-14364.ppm
+Image 4 with   500,000 points: pi = 3.14458 saved in img4_3-14458.ppm
+Image 5 with   600,000 points: pi = 3.14464 saved in img5_3-14464.ppm
+Image 6 with   700,000 points: pi = 3.14290 saved in img6_3-14290.ppm
+Image 7 with   800,000 points: pi = 3.14189 saved in img7_3-14189.ppm
+Image 8 with   900,000 points: pi = 3.14161 saved in img8_3-14161.ppm
+Image 9 with 1,000,000 points: pi = 3.14165 saved in img9_3-14165.ppm
 Generating GIF pi.gif
-Approximation: pi = 3.140828 with 1,000,000 points
-Elapsed time : 1.829s (546,754 points/s)
+Approximation: pi = 3.141652 with 1,000,000 points
+Elapsed time : 1.860s (537,641 points/s)
 Peak memory  : 19 MB
 
 Process finished with exit code 0
