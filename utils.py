@@ -1,4 +1,5 @@
 from random import uniform
+from math import sqrt
 
 BACKGROUND = 0
 OUTSIDE = 1
@@ -49,7 +50,7 @@ class Matrix(Array):
     def fill_matrix(self, points):
         for n in range(points):
             x, y = uniform(-1, 1), uniform(-1, 1)
-            isinside = (x * x + y * y) < 1
+            isinside = sqrt(x * x + y * y) <= 1
             self.inside += isinside
             self.count += 1
             i, j = self.index_xy(x, y)
