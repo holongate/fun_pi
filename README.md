@@ -2,6 +2,8 @@
 
 Le problème est décrit [ici](https://bpi-etu.pages.ensimag.fr/projet/).
 
+![pi](pi.gif)
+
 ## Generation du fichier figures.dat (optionel)
 
 Cette implémentation utilise uniquement la librairie standard,
@@ -12,27 +14,29 @@ que l'exemple du site.
 1. Installer Pillow `pip install pillow`
 2. Lancer le generateur `python genfigures.py`
 
-Un fichier 'figures.dat' est généré qui contient un dictionnaire d'objets `Figure`
-prêt à être charger via `pickle` dans les autres modules.
+Un fichier `figures.dat` est généré qui contient un dictionnaire d'objets `Figure`
+prêt à être chargé via `pickle` par les autres modules.
 
 >Pour changer la police utilisée par le générateur et sa taille, il faut modifier le code
 
 ## Script `convert.py` (optionel)
 
 Puisque le site ne donne pas le programme `convert` devant générer le GIF animé, et puisque
-Pillow est déjà utilisé, un script `convert.sh` cette librairie est proposé pour le simuler.
+Pillow est déjà utilisé, un script `convert.py` utilisant cette librairie est proposé pour le simuler.
 
 Le script attends la liste des fichiers servant à générer l'animation, dans l'ordre chronologique
-et le nom du fichier GIF à générer.
-La temporisation est fixée à une seconde et l'animation boucle par défaut.
+et le nom du fichier GIF à créer.
 
-Il peut être appelé en ligne de commande:
+La temporisation est fixée à 1 image/s et l'animation boucle indéfiniment.
+
+Il peut être appelé en ligne de commande, par exemple:
 
 ```
-convert.sh $(ls ppm/img* | sort) pi.gif
+> python convert.py $(ls ppm/img* | sort) pi.gif
 ```
 
-Il est automatiquement appelé en Python via un subprocess comme demandé par `approximate_pi` à la fin des calculs.
+Il est automatiquement appelé en Python via un subprocess comme demandé par `approximate_pi` à la fin des calculs
+pour simuler le comportement attendu.
 
 ## Module `simulation.py`
 
@@ -47,10 +51,10 @@ Peak memory  : 15 MB
 
 ## Module `approximate_pi.py`
 
-Ce module attends en argument la largeur de l'image (carrée), le nonmbre de points et la precision d'affichage de PI:
+Ce module attends en argument la largeur de l'image (carrée), le nombre de points et la precision d'affichage de PI:
 
 ```
-python approximate_pi.py 800 1000000 5
+> python approximate_pi.py 800 1000000 5
 Image 0 with   100,000 points: pi = 3.15460 saved in img0_3-15460.ppm
 Image 1 with   200,000 points: pi = 3.14958 saved in img1_3-14958.ppm
 Image 2 with   300,000 points: pi = 3.14428 saved in img2_3-14428.ppm
@@ -70,3 +74,6 @@ Process finished with exit code 0
 ```
 
 >NB: Les fichiers ppm sont créés par défaut dans le sous-répertoire ppm.
+
+>NB 2: aucune indication du protocole PPM n'étant donnée, **P6** est uilisé (binaire) et non pas **P3** (ascii)
+>car Pillow ne semble pas savoir les lire, mais cela correspond à la taille des fichiers annoncé sur le site.
